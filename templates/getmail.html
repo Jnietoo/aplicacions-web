@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Buscar Mail{% endblock %}
+
+{% block content %}
+    <h2 class="text-primary text-center mb-4">Cercar Mail</h2>
+    
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label">Nom de l'usuari:</label>
+            <input type="text" name="usuario" class="form-control" required placeholder="Ex: Armanjot">
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Buscar</button>
+    </form>
+
+    {% if resultado %}
+        <div class="alert alert-success mt-3">{{ resultado }}</div>
+    {% endif %}
+    
+    {% if error %}
+        <div class="alert alert-danger mt-3">{{ error }}</div>
+    {% endif %}
+
+    <hr class="my-4">
+    <div class="text-center">
+        <a href="/addmail" class="btn btn-link">No existeix? Afegeix un nou mail</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Afegir Mail{% endblock %}
+
+{% block content %}
+    <h2 class="text-success text-center mb-4">Afegir Nou Usuari</h2>
+    
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label">Nom:</label>
+            <input type="text" name="usuario" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Correu:</label>
+            <input type="email" name="mails" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Guardar</button>
+    </form>
+
+    {% if mensaje %}
+        <div class="alert alert-info mt-3">{{ mensaje }}</div>
+    {% endif %}
+
+    <hr class="my-4">
+    <div class="text-center">
+        <a href="/getmail" class="btn btn-link">Tornar al cercador</a>
+    </div>
+{% endblock %}
